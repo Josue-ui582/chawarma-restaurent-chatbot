@@ -4,6 +4,7 @@ import ChatForm from '../components/ChatForm'
 import ChatMessage from '../components/ChatMessage';
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { companyInfo } from '../CompanyInfo';
+import { Link } from 'react-router-dom';
 
 function Chatbot() {
   
@@ -59,9 +60,7 @@ function Chatbot() {
               <ChatbotIcon />
               <h2 className="logo-text">Chatbot</h2>
             </div>
-            <button class="material-symbols-rounded">
-              <MdKeyboardArrowDown />
-            </button>
+            <Link to="/" className='button'><MdKeyboardArrowDown /></Link>
           </div>
 
           <div ref={chatBodyRef} className="chatbot-body">
