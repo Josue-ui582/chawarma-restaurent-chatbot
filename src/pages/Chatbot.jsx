@@ -43,7 +43,8 @@ function Chatbot() {
       updateHistory(apiResponseText);
 
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
+      alert("Nous utilisons une API externe. Si l'envoie de réponse devient un peu plus long, sachez que nous avons déjà atteint notre limite d'utilisation gratuite du service externe. Ils'agit juste d'un test. Merci pour votre fidélité 👏");
     }
   }
 
