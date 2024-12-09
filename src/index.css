@@ -1,0 +1,238 @@
+*{
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgb(63, 63, 63);
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: rgb(100, 100, 255);
+  height: 100vh;
+}
+
+.container {
+  width: 33%;
+  max-width: 1200px;
+  height: 100vh;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.chat-popup{
+  width: 450px;
+  height: inherit;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 0 128px rgb(255, 255, 255) 0 36px 64px -48px rgb(255, 255, 255);
+}
+
+.chat-popup .chat-header{
+  background-color: #f08930;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 22px;
+}
+
+.chat-header .header-info{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logo-text{
+  color: white;
+}
+
+.header-info svg{
+  height: 35px;
+  width: 35px;
+  padding: 6px;
+  fill: #6DAFC2;
+  background-color: white;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.header-info .logo-text{
+  font-weight: 600;
+  font-size: 1.34rem;
+}
+
+.chat-header button {
+  height: 40px;
+  width: 40px;
+  border: none;
+  outline: none;
+  background-color: rgba(222, 219, 219, 0.866);
+  border-radius: 100%;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.chat-header button:hover{
+  background-color: rgba(209, 206, 206, 0.866);
+}
+
+.chatbot-body{
+  padding: 25px 22px;
+  height: 85%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  scrollbar-width: thin;
+}
+
+.chatbot-body .message{
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.chatbot-body .bot-message svg {
+  height: 35px;
+  width: 35px;
+  padding: 6px;
+  fill: #ffffff;
+  background-color: rgb(100, 100, 255);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chatbot-icon{
+  height: 35px;
+  width: 35px;
+  padding: 6px;
+  fill: #ffffff;
+  background-color: #f08930;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chatbot-body .message .message-text{
+  padding: 12px 16px;
+  max-width: 75%;
+  word-wrap: break-word;
+  white-space: pre-line;
+  font-size: 0.95rem;
+}
+
+.chatbot-body .message-user{
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.chatbot-body .message-bot .message-text {
+  background: rgba(187, 183, 183, 0.866);
+  color: rgb(60, 58, 58);
+  border-radius: 10px 10px 10px 0;
+}
+
+.chatbot-body .message-user .message-text {
+  background: rgba(222, 214, 214, 0.866);
+  color: rgb(59, 58, 58);
+  border-radius: 10px 10px 0px 10px;
+}
+
+.chatbot-footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 22px 20px;
+  background-color: white;
+}
+
+.chatbot-footer form{
+  display: flex;
+  align-items: center;
+  outline: 1px solid rgba(238, 231, 231, 0.866);
+  border-radius: 32px;
+}
+
+.chatbot-footer form:focus-within{
+  outline: 2px solid rgb(206, 206, 225);
+}
+
+form .message-input{
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0 17px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+form button{
+  height: 35px;
+  width: 35px;
+  border: none;
+  outline: none;
+  border-radius: 100%;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: rgb(100, 100, 255);
+  background-color: #f08930;
+}
+
+.chat-form .message-input:valid~button{
+  display: block;
+}
+
+#chatbot-toggler{
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(222, 219, 219, 0.866);
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 1px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .chatbot-footer{
+    padding: 15px;
+  }
+
+  html, body, #root {
+    height: 100%;
+    background-color: white;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 1px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+}

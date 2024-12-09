@@ -1,0 +1,102 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .home-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #f7c331, #f08a24);
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .welcome-box {
+    text-align: center;
+    background: white;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .welcome-title {
+    font-size: 2rem;
+    color: #f08a24;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-text {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+  
+  .welcome-subtext {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  .chat-link {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    color: white;
+    background: #f08a24;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .chat-link:hover {
+    background: #d9741e;
+  }
+  
+  @media (max-width: 768px) {
+    .welcome-box {
+      padding: 1rem 2.5rem;
+    }
+  
+    .welcome-title {
+      font-size: 1.8rem;
+    }
+  
+    .welcome-text {
+      font-size: 1rem;
+    }
+  
+    .chat-link {
+      font-size: 1rem;
+      padding: 0.7rem 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .welcome-box {
+      padding: 1.5rem 2rem;
+    }
+  
+    .welcome-title {
+      font-size: 1.6rem;
+    }
+  
+    .welcome-text {
+      font-size: 0.9rem;
+    }
+  
+    .chat-link {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+    }
+  }  
