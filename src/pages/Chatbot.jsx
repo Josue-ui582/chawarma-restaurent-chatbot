@@ -31,7 +31,7 @@ function Chatbot() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${import.meta.env.VITE_API_URL}`,
+        "Authorization": `Bearer ${import.meta.env.VITE_API_KEY}`,
       },
       body: JSON.stringify({
         model: "ministral-3b-latest",
@@ -41,7 +41,7 @@ function Chatbot() {
     };
   
     try {
-      const response = await fetch("https://api.mistral.ai/v1/chat/completions", requestOption);
+      const response = await fetch(import.meta.env.VITE_API_URL, requestOption);
       if (!response.ok) {
         throw new Error("Erreur dans la réponse de l'API Mistral");
       }
