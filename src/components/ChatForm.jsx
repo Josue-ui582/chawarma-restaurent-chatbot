@@ -22,7 +22,7 @@ const ChatForm = ({ chatHistory, setChatHistory, generateBotResponse }) => {
     }
 
     return(
-        <form action="#" className="chat-form" onSubmit={handleFormSubmit}>
+        <form className="chat-form" onSubmit={handleFormSubmit}>
             <input ref={inputRef} type="text" placeholder='Message...' className='message-input'/>
             <button><LuSendHorizontal /></button>
       </form>

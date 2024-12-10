@@ -133,7 +133,7 @@ html, body, #root {
   align-items: flex-end;
 }
 
-.chatbot-body .message-bot .message-text {
+.chatbot-body .message-assistant .message-text {
   background: rgba(187, 183, 183, 0.866);
   color: rgb(60, 58, 58);
   border-radius: 10px 10px 10px 0;

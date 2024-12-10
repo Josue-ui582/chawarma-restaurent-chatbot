@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react'
-import ChatbotIcon from '../components/ChatbotIcon'
-import ChatForm from '../components/ChatForm'
+import React, { useRef, useState, useEffect } from 'react';
+import ChatbotIcon from '../components/ChatbotIcon';
+import ChatForm from '../components/ChatForm';
 import ChatMessage from '../components/ChatMessage';
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { companyInfo } from '../CompanyInfo';
@@ -18,43 +18,47 @@ function Chatbot() {
   const chatBodyRef = useRef();
 
   const generateBotResponse = async (history) => {
-
     const updateHistory = (text) => {
-      setChatHistory(prev => [...prev.filter(msg => msg.text !== "Thinking..."), {role : "model", text}])
-    }
+      setChatHistory(prev => [...prev.filter(msg => msg.text !== "Thinking..."), { role: "model", text }]);
+    };
 
-    history = history.map(({role, text}) => ({role, parts: [{ text }] }));
-
+    history = history.map(({ role, text }) => ({
+      role: role === "model" ? "assistant" : "user",
+      content: text,
+    }));
+  
     const requestOption = {
-      method : "POST",
-      headers : { "Content-Type" : "application/json"},
-      body : JSON.stringify({ contents : history }),
-    }
-
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${import.meta.env.VITE_API_URL}`,
+      },
+      body: JSON.stringify({
+        model: "ministral-3b-latest",
+        messages: history,
+        max_tokens: 150,
+      }),
+    };
+  
     try {
-      const response = await fetch(import.meta.env.VITE_API_URL, requestOption);
-      const data = await response.json();
-
+      const response = await fetch("https://api.mistral.ai/v1/chat/completions", requestOption);
       if (!response.ok) {
-        throw new Error();
+        throw new Error("Erreur dans la réponse de l'API Mistral");
       }
-      
-      const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
-      
+      const data = await response.json();
+      const apiResponseText = data.choices[0].message.content.trim();
+  
       updateHistory(apiResponseText);
-
     } catch (error) {
       console.log(error.message);
-      alert("Nous utilisons une API externe. Si l'envoie de réponse devient un peu plus long, sachez que nous avons déjà atteint notre limite d'utilisation gratuite du service externe. Il s'agit juste d'un test. Merci pour votre fidélité 👏");
     }
-  }
+  };  
 
   useEffect(() => {
-    chatBodyRef.current.scrollTo({top: chatBodyRef.current.scrollHeight, behavior: "smooth"})
-  },[chatHistory])
+    chatBodyRef.current.scrollTo({top: chatBodyRef.current.scrollHeight, behavior: "smooth"});
+  }, [chatHistory]);
 
   return (
-    
     <div className='container'>
         <div className="chat-popup">
           <div className="chat-header">
@@ -66,7 +70,6 @@ function Chatbot() {
           </div>
 
           <div ref={chatBodyRef} className="chatbot-body">
-
             {chatHistory.map((chat, index) => (
               <ChatMessage key={index} chat={chat} />
             ))}
@@ -77,7 +80,7 @@ function Chatbot() {
           </div>
         </div>
     </div>
-  )
+  );
 }
 
-export default Chatbot
+export default Chatbot;
