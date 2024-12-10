@@ -36,15 +36,16 @@ function Chatbot() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error.message || "Something went wrong...");
+        throw new Error();
       }
-
+      
       const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
+      
       updateHistory(apiResponseText);
 
     } catch (error) {
       console.log(error.message);
-      alert("Nous utilisons une API externe. Si l'envoie de réponse devient un peu plus long, sachez que nous avons déjà atteint notre limite d'utilisation gratuite du service externe. Ils'agit juste d'un test. Merci pour votre fidélité 👏");
+      alert("Nous utilisons une API externe. Si l'envoie de réponse devient un peu plus long, sachez que nous avons déjà atteint notre limite d'utilisation gratuite du service externe. Il s'agit juste d'un test. Merci pour votre fidélité 👏");
     }
   }
 
