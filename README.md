@@ -1,8 +1,19 @@
-# React + Vite
+# ChatBot pour un restaurent de vente de Shawarma
+Ceci est un chatbot basé sur un restaurant de vente de Shawarma qui peine à gérer ses clients en repondant tous à tout momen. Cette solution a fait évolué son entreprise de façon croissante
+## 🚀 Fonctionnalités
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- ✅ Génération de reponse en moin de 5s
+- ✅ Pages web responsives
+- ✅ Compréhension du langauge humain optimisé
 
-Currently, two official plugins are available:
+## 🛠️ Technologies utilisées
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React JS, Javascript, Tailwind CSS
+- IA Mistral AI
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/ton-utilisateur/ton-projet.git
+npm install
+npm run dev
