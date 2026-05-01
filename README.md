@@ -1,19 +1,19 @@
-# ChatBot pour un restaurent de vente de Shawarma
-Ceci est un chatbot basé sur un restaurant de vente de Shawarma qui peine à gérer ses clients en repondant tous à tout momen. Cette solution a fait évolué son entreprise de façon croissante
-## 🚀 Fonctionnalités
+# Chatbot for a Shawarma Restaurant
+This is a chatbot designed for a shawarma restaurant that struggles to manage customer interactions and respond at all times. This solution has helped the business grow steadily.
+## 🚀 Features
 
-- ✅ Génération de reponse en moin de 5s
-- ✅ Pages web responsives
-- ✅ Compréhension du langauge humain optimisé
+- ✅ Response generation in under 5 seconds
+- ✅ Responsive web pages
+- ✅ Optimized natural language understanding
 
-## 🛠️ Technologies utilisées
+## 🛠️Technologies Used
 
-- React JS, Javascript, Tailwind CSS
-- IA Mistral AI
+- React JS, JavaScript, Tailwind CSS
+- Mistral AI
 
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/ton-utilisateur/ton-projet.git
+git@github.com:Josue-ui582/chawarma-restaurent-chatbot.git
 npm install
 npm run dev
